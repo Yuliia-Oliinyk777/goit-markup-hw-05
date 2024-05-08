@@ -181,7 +181,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-.feature-title {
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -487,9 +487,9 @@ a {
   color: #ffffff;
   margin-bottom: 16px;
 }
-.footer-form-subscrib-wrapper {
+.footer-form-subscribe-wrapper {
 }
-.footer-form-subscrib {
+.footer-form-subscribe {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -503,18 +503,28 @@ a {
   background-color: transparent;
   padding-left: 16px;
   outline: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
 }
 .footer-form-input:focus {
   border-color: #4d5ae5;
 }
-
-.footer-subscrib-btn {
+.footer-form-input::placeholder {
+  color: #ffffff;
+}
+.footer-subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  text-align: start;
+  text-align: center;
   color: #ffffff;
   border-radius: 4px;
   border: none;
@@ -524,14 +534,12 @@ a {
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-subscrib-btn:hover,
-.footer-subscrib-btn:focus {
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
   background-color: #404bbf;
 }
-.footer-subscrib-btn-icon {
-  position: absolute;
-  top: 10px;
-  right: 24px;
+.footer-subscribe-btn-icon {
+  margin-left: 16px;
   fill: #ffffff;
 }
 
@@ -566,20 +574,26 @@ a {
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
   border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 24px;
   right: 24px;
   width: 24px;
   height: 24px;
   line-height: 0;
-  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
   border: none;
   padding: 0;
   background-color: #e7e9fc;
   margin-bottom: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
@@ -588,7 +602,7 @@ a {
 
 .modal-close-btn-icon {
   fill: #2e2f42;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover > .modal-close-btn-icon,
@@ -623,8 +637,8 @@ a {
   height: 40px;
   padding-left: 38px;
   margin-bottom: 8px;
-  background-color: #fcfcfc;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-field-input:focus {
   border-color: #4d5ae5;
@@ -632,6 +646,7 @@ a {
 
 .modal-form-input-wrapper {
   position: relative;
+  margin-bottom: 8px;
 }
 .modal-form-field-icon {
   position: absolute;
@@ -639,10 +654,13 @@ a {
   left: 16px;
   transform: translateY(-50%);
   fill: #2e2f42;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-field-input:focus + .modal-form-field-icon {
   fill: #4d5ae5;
+}
+.modal-form-comment-wrapper {
+  margin-bottom: 16px;
 }
 .modal-form-comment {
   outline: transparent;
@@ -654,6 +672,12 @@ a {
   resize: none;
   padding: 8px 16px;
   margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-comment:focus {
   border-color: #4d5ae5;
@@ -678,7 +702,7 @@ a {
   color: #8e8f99;
 }
 .form-checkbox-own {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -687,6 +711,9 @@ a {
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .privacy-policy-link {
@@ -698,7 +725,7 @@ a {
   + .modal-form-checkbox-label
   .form-checkbox-own {
   background-color: #404bbf;
-  border-color: #404bbf;
+  border: none;
   fill: #f4f4fd;
 }
 .modal-submit-btn {

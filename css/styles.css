@@ -588,7 +588,6 @@ a {
   line-height: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  border: none;
   padding: 0;
   background-color: #e7e9fc;
   margin-bottom: 24px;
@@ -694,9 +693,6 @@ a {
 }
 
 .modal-form-checkbox-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;

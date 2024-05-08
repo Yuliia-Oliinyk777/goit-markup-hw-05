@@ -619,7 +619,9 @@ a {
   color: #2e2f42;
   margin-bottom: 16px;
 }
-
+.modal-form-field-wrapper {
+  margin-bottom: 8px;
+}
 .modal-form-field-label {
   display: block;
   font-weight: 400;
@@ -646,7 +648,6 @@ a {
 
 .modal-form-input-wrapper {
   position: relative;
-  margin-bottom: 8px;
 }
 .modal-form-field-icon {
   position: absolute;
